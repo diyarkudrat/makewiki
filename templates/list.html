@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Page List</h1>
+
+    {% for page in all_pages %}
+        <a href='/w/{{ page.slug }}'>{{ page.title }}</a>
+
+    {% endfor %}
+
+{% endblock %}
