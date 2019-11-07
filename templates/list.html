@@ -3,9 +3,11 @@
 {% block content %}
     <h1>Page List</h1>
 
+    <ul>
     {% for page in all_pages %}
-        <a href='/w/{{ page.slug }}'>{{ page.title }}</a>
+        <li><a href="{% url 'wiki-details-page' page.slug %}">{{ page.title }}</a></li>
 
     {% endfor %}
+    <ul>
 
 {% endblock %}

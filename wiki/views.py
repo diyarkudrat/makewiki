@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from wiki.models import Page
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -15,8 +15,8 @@ class PageList(ListView):
 
     def get(self, request):
         """ Returns a list of wiki pages. """
-        all_pages = list(Page.objects.all())
-        model = Page
+        all_pages =  Page.objects.all()
+        
         return render(request, 'list.html', {'all_pages': all_pages})
 
 
