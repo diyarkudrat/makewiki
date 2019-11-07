@@ -13,6 +13,6 @@ from . import views
   """
 
 urlpatterns = [
-    path('wiki/', views.PageList.as_view(), name='wiki-list-page'),
-    path('<slug>/', views.PageDetailView.as_view(), name='wiki-details-page'),
+    path('', views.PageList.as_view(), name='wiki-list-page'),
+    path('w/<slug:slug>', views.PageDetailView.as_view(), name='wiki-details-page'),
 ]
